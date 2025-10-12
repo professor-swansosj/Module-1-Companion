@@ -1,0 +1,16 @@
+interface_name,device_hostname,status,speed,duplex,vlan,description,mac_address,error_count
+GigabitEthernet0/0,BORDER-RTR1,up,1000,full,N/A,"WAN to ISP",00:1A:2B:3C:4D:5E,0
+GigabitEthernet0/1,BORDER-RTR1,up,1000,full,N/A,"LAN Interface",00:1A:2B:3C:4D:5F,2
+GigabitEthernet1/0/1,CORE-SW1,up,1000,full,100,"Sales PC Connection",00:2A:3B:4C:5D:6E,0
+GigabitEthernet1/0/2,CORE-SW1,up,1000,full,200,"Finance PC Connection",00:2A:3B:4C:5D:6F,1
+GigabitEthernet1/0/3,CORE-SW1,up,100,full,100,"Sales Printer",00:2A:3B:4C:5D:70,0
+GigabitEthernet1/0/4,CORE-SW1,down,auto,auto,1,"Unused Port",00:2A:3B:4C:5D:71,0
+GigabitEthernet1/0/24,CORE-SW1,up,1000,full,trunk,"Uplink to Router",00:2A:3B:4C:5D:7E,0
+GigabitEthernet0/1,ACCESS-SW2,up,100,full,100,"Sales Desktop 1",00:3A:4B:5C:6D:7E,0
+GigabitEthernet0/2,ACCESS-SW2,up,1000,full,100,"Sales Desktop 2",00:3A:4B:5C:6D:7F,3
+GigabitEthernet0/3,ACCESS-SW2,up,100,full,100,"Sales Laptop Dock",00:3A:4B:5C:6D:80,1
+GigabitEthernet0/12,ACCESS-SW2,up,1000,full,150,"Wireless AP Connection",00:3A:4B:5C:6D:81,0
+GigabitEthernet0/24,ACCESS-SW2,up,1000,full,trunk,"Uplink to Core Switch",00:3A:4B:5C:6D:8E,0
+GigabitEthernet0,OFFICE-AP1,up,1000,full,150,"AP Ethernet Interface",00:4A:5B:6C:7D:8E,0
+Serial0/0/0,WAN-RTR2,up,1544,N/A,N/A,"T1 Line to Branch",00:5A:6B:7C:8D:9E,5
+GigabitEthernet0/0,WAN-RTR2,up,1000,full,N/A,"Internet Connection",00:5A:6B:7C:8D:9F,1

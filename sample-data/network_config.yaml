@@ -1,0 +1,230 @@
+# Network Configuration for Main Office
+# YAML format for infrastructure as code
+
+site_info:
+  name: "Main Office"
+  location: "123 Business Way, Enterprise City, ST 12345"
+  contact_person: "Network Admin"
+  phone: "+1-555-0123"
+  deployment_date: "2024-01-15"
+
+# Network device configurations
+devices:
+  routers:
+    - hostname: "BORDER-RTR1"
+      model: "ISR4331" 
+      management_ip: "192.168.1.1"
+      interfaces:
+        - name: "GigabitEthernet0/0"
+          description: "WAN to ISP"
+          ip_address: "203.0.113.2"
+          subnet_mask: "255.255.255.252"
+          bandwidth: 1000000
+        - name: "GigabitEthernet0/1"
+          description: "LAN Interface"
+          ip_address: "192.168.1.1"
+          subnet_mask: "255.255.255.0"
+          bandwidth: 1000000
+      
+      routing:
+        ospf:
+          enabled: true
+          process_id: 1
+          router_id: "1.1.1.1"
+          areas:
+            - area_id: 0
+              networks:
+                - "192.168.1.0 0.0.0.255"
+                - "203.0.113.0 0.0.0.3"
+        
+        static_routes:
+          - destination: "0.0.0.0/0"
+            next_hop: "203.0.113.1"
+            admin_distance: 1
+            description: "Default route to ISP"
+
+  switches:
+    - hostname: "CORE-SW1"
+      model: "Catalyst9300-48P"
+      management_ip: "192.168.1.10"
+      vlans:
+        - id: 1
+          name: "default"
+          description: "Default VLAN"
+        - id: 100
+          name: "SALES"
+          description: "Sales Department"
+        - id: 200  
+          name: "FINANCE"
+          description: "Finance Department"
+        - id: 300
+          name: "IT"
+          description: "IT Department"
+      
+      port_config:
+        access_ports:
+          - range: "1-12"
+            vlan: 100
+            description: "Sales Department Ports"
+          - range: "13-24"
+            vlan: 200
+            description: "Finance Department Ports"
+        
+        trunk_ports:
+          - port: 47
+            description: "Uplink to Distribution"
+            allowed_vlans: "1,100,200,300"
+          - port: 48
+            description: "Backup Uplink"
+            allowed_vlans: "all"
+
+    - hostname: "ACCESS-SW2"
+      model: "Catalyst2960-X"
+      management_ip: "192.168.1.20"
+      vlans:
+        - id: 1
+          name: "default" 
+          description: "Default VLAN"
+        - id: 100
+          name: "SALES"
+          description: "Sales Department"
+      
+      port_config:
+        access_ports:
+          - range: "1-23"
+            vlan: 100
+            description: "Sales Access Ports"
+        trunk_ports:
+          - port: 24
+            description: "Uplink to Core Switch"
+            allowed_vlans: "1,100"
+
+  wireless:
+    - hostname: "OFFICE-AP1"
+      model: "Catalyst9120AXI"
+      management_ip: "192.168.1.30"
+      location: "Conference Room A"
+      
+      ssids:
+        - name: "CompanyWiFi"
+          vlan: 100
+          security: "WPA2-PSK"
+          passphrase: "SecureWiFi2024!"
+          broadcast: true
+          
+        - name: "GuestWiFi"
+          vlan: 500
+          security: "WPA2-PSK"
+          passphrase: "Guest123"
+          broadcast: true
+          isolation: true
+      
+      radio_config:
+        band_2_4ghz:
+          channel: 6
+          power: 1
+          enabled: true
+        band_5ghz:
+          channel: 36
+          power: 1
+          enabled: true
+
+# Network services configuration
+services:
+  dhcp:
+    scopes:
+      - network: "192.168.100.0/24"
+        vlan: 100
+        gateway: "192.168.100.1"
+        dns_servers:
+          - "8.8.8.8"
+          - "1.1.1.1"
+        lease_time: "8 hours"
+        
+      - network: "192.168.200.0/24"
+        vlan: 200
+        gateway: "192.168.200.1" 
+        dns_servers:
+          - "8.8.8.8"
+          - "1.1.1.1"
+        lease_time: "12 hours"
+
+  ntp:
+    servers:
+      - "pool.ntp.org"
+      - "time.google.com"
+    timezone: "EST -5 0"
+
+  syslog:
+    server: "192.168.1.100"
+    facility: "local7"
+    level: "informational"
+
+  snmp:
+    version: "v2c"
+    communities:
+      - name: "public"
+        access: "ro"
+        acl: 10
+      - name: "private"
+        access: "rw"
+        acl: 20
+
+# Security policies
+security:
+  access_lists:
+    - number: 10
+      description: "SNMP Access Control"
+      entries:
+        - action: "permit"
+          source: "192.168.1.0 0.0.0.255"
+        - action: "deny"
+          source: "any"
+    
+    - number: 20  
+      description: "SNMP Write Access"
+      entries:
+        - action: "permit"
+          source: "192.168.1.0 0.0.0.31" 
+        - action: "deny"
+          source: "any"
+
+  port_security:
+    enabled: true
+    max_addresses: 2
+    violation_action: "shutdown"
+    aging_time: 30
+
+# Monitoring configuration
+monitoring:
+  enabled: true
+  polling_interval: 300  # seconds
+  
+  thresholds:
+    cpu_warning: 70
+    cpu_critical: 90
+    memory_warning: 80
+    memory_critical: 95
+    interface_error_rate: 0.01  # 1%
+  
+  backup:
+    enabled: true
+    schedule: "daily"
+    time: "02:00"
+    retention_days: 30
+    location: "tftp://192.168.1.100/backups/"
+
+# Deployment settings
+deployment:
+  staging: false
+  rollback_enabled: true
+  change_window: 
+    start: "22:00"
+    end: "06:00"
+    timezone: "EST"
+  
+  validation_tests:
+    - "ping 8.8.8.8"
+    - "show version"
+    - "show ip route"
+    - "show vlan brief"
