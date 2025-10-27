@@ -42,12 +42,12 @@
 
 Welcome to the Module 1 Companion Lab! This repository contains hands-on practice exercises to reinforce the concepts covered in your instructional video.
 
-The best way to learn a programming language is to use it. That is the purpose of the Companion. You should not just go through the companion and video without thought. You should understand what it is that you are practicing, change it, alter it, break it. Do whatever you want as the IDE is your own personal Cavnas to build what you want. The more time you spdend on the Companions the easier each Lab will be for you. You should spend most of your time in the companion. When you feel confident move over to the lab and you will find they are rather simple. The key is to practice as much as possible so you grasp the fundementals of what we are learning.
+The best way to learn a programming language is to use it. That is the purpose of the Companion. You should not just go through the companion and video without thought. You should understand what it is that you are practicing, change it, alter it, break it. Do whatever you want as the IDE is your own personal Canvas to build what you want. The more time you spend on the Companions the easier each Lab will be for you. You should spend most of your time in the companion. When you feel confident move over to the lab and you will find they are rather simple. The key is to practice as much as possible so you grasp the fundamentals of what we are learning.
 
-**NOTE: IF THE PROVIDED CODE DOES NOT WORK OUT THE GATE IT IS INENTIONAL. Read the errrors the traceback provide to you to work through the problem and solve it!**
+**NOTE: IF THE PROVIDED CODE DOES NOT WORK OUT THE GATE IT IS INTENTIONAL. Read the errors the traceback provide to you to work through the problem and solve it!**
 
-DO NO PUSH THIS REPO BACK TO GITHUB IT IS NOT MEANT TO BE PUSHED BACK TO GITHUB. WHEN YOU ARE DONE
-SIMPLY DELETE IT. IF YOU WANT TO WORK ONN IT FURTHER JUST CLONE ANOTHER COPY
+DO NOT PUSH THIS REPO BACK TO GITHUB IT IS NOT MEANT TO BE PUSHED BACK TO GITHUB. WHEN YOU ARE DONE
+SIMPLY DELETE IT. IF YOU WANT TO WORK ON IT FURTHER JUST CLONE ANOTHER COPY
 
 **How to use this repository:**
 
@@ -69,16 +69,16 @@ Building off the Basics in Python from your Scripting course one of the most use
 of Python is the ability to write your own functions(). A `Python Function` is simply a block  
 of code that you can reuse. Rather than write giant single execution programs we break the code  
 up into smaller blocks that we call functions(). A function can take different inputs known as  
-arguments such as variables, lists, dictionaires, and tuples as an input that will be passed to  
+arguments such as variables, lists, dictionaries, and tuples as an input that will be passed to  
 the function upon execution. Functions do not require arguments to be passed in but it is common  
-to see. For example a simply function that prints a message does not need anything else to execute  
+to see. For example a simple function that prints a message does not need anything else to execute  
 successfully where a custom message that would require say a device hostname as part of the message  
 will need that hostname passed in upon runtime.
 A python function is a block of code that can be called after it is defined. As a best practice you
-typically want to break up as much of your code as possible into mutliple functions. As a genneral
-guidline you should aim to have your functions be no longer than 20-30 lines of code. Most of the time
+typically want to break up as much of your code as possible into multiple functions. As a general
+guideline you should aim to have your functions be no longer than 20-30 lines of code. Most of the time
 you will need to pass information into your function so it can perform some type of logic on the data.
-In the function below we pass a argument name to the function and then print a message using that name.
+In the function below we pass an argument name to the function and then print a message using that name.
 
 ```python
 def greeting(name): #Define a function called greeting that takes one argument name
