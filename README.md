@@ -425,6 +425,18 @@ In Python, the `__init__.py` file defines how a directory behaves when it’s im
 
 When importing in Python, keep it clean and predictable. Always place imports at the top of your file, right after any module docstring. Use absolute imports whenever possible, such as `from network_automation.devices import CiscoDevice`, so your code is clear and works across projects. Avoid wildcard imports like `from tools import *` because they clutter the namespace and make debugging harder. Group imports by standard library, third-party modules, and your own files, leaving a blank line between each group. Import only what you need—`from netmiko import ConnectHandler` is faster and easier to read than importing the whole library. Finally, avoid circular imports by placing shared constants or helper functions in a separate module if needed.
 
+### The Direct Execution Check
+
+`if __name__ == "__main__"`: ensures that certain code only runs when the file is executed directly, not when it’s imported as a module. Python sets the special variable `__name__` to `"__main__"` for the main script, but to the module’s name when imported. This lets you keep reusable functions and classes separate from test or execution code.
+
+To make sure a block of code only runs when a script is executed directly (not when it’s imported as a module), use the `if __name__ == "__main__"`: check. It’s written exactly like this:
+
+```python
+if __name__ == "__main__":
+    # code that runs only when this file is executed directly
+    main()
+```
+
 **📁 Practice Location:** `03-modules/import_examples.py`
 
 **What to Practice:**
