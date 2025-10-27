@@ -1,0 +1,4 @@
+location,total_devices,online_devices,offline_devices
+office,2,2,0
+datacenter,1,1,0
+branch,2,1,1

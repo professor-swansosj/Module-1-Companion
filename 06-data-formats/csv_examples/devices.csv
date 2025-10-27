@@ -1,0 +1,6 @@
+hostname,ip,type,location,status
+router1,192.168.1.1,router,office,online
+switch1,192.168.1.2,switch,office,online
+firewall1,192.168.1.3,firewall,datacenter,online
+router2,192.168.2.1,router,branch,offline
+switch2,192.168.2.2,switch,branch,online

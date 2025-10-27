@@ -1,0 +1,32 @@
+{
+  "devices": [
+    {
+      "hostname": "router1",
+      "ip": "192.168.1.1",
+      "type": "router",
+      "location": "office"
+    },
+    {
+      "hostname": "switch1",
+      "ip": "192.168.1.2",
+      "type": "switch",
+      "location": "office"
+    },
+    {
+      "hostname": "firewall1",
+      "ip": "192.168.1.3",
+      "type": "firewall",
+      "location": "datacenter"
+    },
+    {
+      "hostname": "ap1",
+      "ip": "192.168.1.4",
+      "type": "access_point",
+      "location": "office"
+    }
+  ],
+  "network_info": {
+    "total_devices": 4,
+    "site_name": "Main Office"
+  }
+}
