@@ -1,4 +1,6 @@
-# Software Defined Networking - Module 1 Companion Lab
+# Module 1 Companion - Python Fundamentals for Network Automation
+
+## Software Defined Networking Course
 
 > **Practice Makes Perfect!** This companion lab is your hands-on workshop for mastering Python fundamentals in network automation. Get ready to code, explore, and build the foundation for advanced SDN concepts!
 
@@ -25,8 +27,6 @@ Master Python fundamentals through network automation scenarios! You'll build fu
 | **05-error-handling/** | Robust Code | Error-resistant network automation with try/except |
 | **06-data-formats/** | Data Processing | Master JSON, CSV, YAML, and XML for network data |
 | **07-final-challenge/** | Integration Project | Complete network automation system using all concepts |
-
----
 
 ## 🎯 Practice Callouts
 
@@ -66,7 +66,9 @@ Ready to dive in? Here's your roadmap:
 
 ## 🎖 Module Quick Reference
 
-### Positional Arguments
+### Functions
+
+#### Positional Arguments
 
 Positional arguments in Python are the values passed to a function in the exact order its parameters are defined. The position determines which parameter each value is assigned to. For example, in `def greet(name, age): ...` calling `greet("Bob", 37)` assigns `"Bob"` to `name` and `37` to `age`. If you switch the order, the meaning changes—so the *position* is what matters.
 
@@ -85,7 +87,7 @@ cd 01-functions
 python function_basics.py
 ```
 
-### Keyword Arguments
+#### Keyword Arguments
 
 Keyword arguments in Python are passed by explicitly naming the parameter, so order doesn’t matter. For example, in `greet(name="Sheldon", age=37)`, each value is matched to its parameter by name, not position. This makes code clearer and allows you to mix them with positional arguments, as long as all positional ones come first.
 
@@ -97,7 +99,7 @@ Keyword arguments in Python are passed by explicitly naming the parameter, so or
 - Practice calling the function with arguments in different orders
 - Create a function that configures OSPF with keyword arguments
 
-### Default Arguments
+#### Default Arguments
 
 Default arguments in Python are parameters that take on a preset value if no corresponding argument is provided when the function is called. They make parameters optional and help simplify code by avoiding redundant arguments. For example, `def greet(name, greeting="Hello"):` allows you to call `greet("Bob")` and automatically use “Hello,” but you can still override it with `greet("Bob", "Hi")`. The key rule is that default arguments must come after all required positional ones in the function definition.
 
@@ -111,7 +113,7 @@ Default arguments in Python are parameters that take on a preset value if no cor
 
 **Challenge:** Create a function that configures a switch port with default VLAN 1 and default mode "access"
 
-### Variable-Length Positional Arguments
+#### Variable-Length Positional Arguments
 
 Variable-length positional arguments let a function accept any number of extra positional values, captured as a tuple using `*args`. In `def f(x, *args):`, `x` gets the first argument and all remaining positional arguments land in `args` (e.g., `f(1, 2, 3, 4)` → `x=1`, `args=(2, 3, 4))`. `*args` must come after all regular positional parameters and before keyword-only parameters; you can iterate or unpack `args` inside the function as needed.
 
@@ -123,7 +125,7 @@ Variable-length positional arguments let a function accept any number of extra p
 - Create a function that can backup configurations for any number of devices
 - Practice unpacking lists into function arguments
 
-### Variable-Length Keyword Arguments
+#### Variable-Length Keyword Arguments
 
 Variable-length keyword arguments let a function accept any number of named arguments, captured as a dictionary using `**kwargs`. This means you don’t have to predetermine all possible keyword parameters. For example, in `def f(**kwargs):`, calling `f(x=1, y=2)` results in `kwargs = {'x': 1, 'y': 2}`. Inside the function, you can access, iterate, or pass these keyword pairs along to other functions. It’s a flexible way to handle optional or dynamic keyword inputs, especially useful in decorators, class constructors, and wrapper functions.
 
@@ -135,7 +137,7 @@ Variable-length keyword arguments let a function accept any number of named argu
 - Create a device configuration function that accepts any number of settings
 - Practice unpacking dictionaries into function arguments
 
-### Keyword-Only Arguments
+#### Keyword-Only Arguments
 
 Keyword-only arguments are parameters that must be specified by name when calling a function, rather than by position. They’re defined after a single asterisk (`*`) in the function signature. For example, in `def connect(host, *, timeout=5, retries=3):`, the arguments `timeout` and `retries` can only be passed as keywords like `connect("server", timeout=10)`. This makes function calls clearer and prevents mistakes caused by misordered positional arguments, especially when a function has many optional settings.
 
@@ -146,7 +148,7 @@ Keyword-only arguments are parameters that must be specified by name when callin
 - Force certain parameters to be passed as keywords for clarity
 - Create a network device connection function with keyword-only security settings
 
-### Positional-Only Arguments
+#### Positional-Only Arguments
 
 Lock down function parameters to prevent misuse in network automation scripts.
 
@@ -154,7 +156,7 @@ Lock down function parameters to prevent misuse in network automation scripts.
 
 **🎯 Your Mission:** Build functions where core parameters can't be accidentally passed by name
 
-### Annotated Arguments
+#### Annotated Arguments
 
 Add type hints to make your network automation code more professional and maintainable.
 
@@ -162,15 +164,13 @@ Add type hints to make your network automation code more professional and mainta
 
 **🎯 Your Mission:** Transform basic functions with proper type annotations for IP addresses, device lists, and configuration data
 
----
-
-## 🏗️ Classes and Objects
+### Classes and Objects
 
 Object-oriented programming helps organize complex network automation tasks. You'll create classes for network devices, configurations, and monitoring systems.
 
 Build reusable network device objects that represent real infrastructure in your code.
 
-### Creating and Initializing Basic Class
+#### Creating and Initializing Basic Class
 
 Create your first network device blueprint with data and behaviors.
 
@@ -180,7 +180,7 @@ Create your first network device blueprint with data and behaviors.
 
 **💪 Level Up:** Add methods for device status and configuration backup
 
-### Class Properties
+#### Class Properties
 
 Add smart validation to your device objects to prevent configuration errors.
 
@@ -190,7 +190,7 @@ Add smart validation to your device objects to prevent configuration errors.
 
 **💪 Level Up:** Add hostname format checking and device type validation
 
-### Class Methods
+#### Class Methods
 
 In network automation, a class method is a function that operates on the class itself rather than on a single device instance. It’s defined with the `@classmethod` decorator and takes `cls` as its first argument, representing the class. Class methods are useful for creating devices from standard templates or shared data sources, such as loading device details from a configuration file or inventory.
 
@@ -225,7 +225,7 @@ Here, the `from_dict` method acts as an alternate constructor—it creates a `Ne
 
 **Try This:** Add a method to backup device configuration and another to restore it
 
-### Class Inheritance
+#### Class Inheritance
 
 Class inheritance allows one class to reuse and extend the behavior of another, which is a core part of object-oriented programming. The original, or parent class, defines common attributes and methods, while the child class inherits them and can add or modify functionality as needed. In network automation, for instance, you might create a general `NetworkDevice` class that handles shared behavior like connecting to a device, and then create subclasses such as `CiscoDevice` or `FortiGateDevice` that override certain methods like `get_version()` to perform vendor-specific actions. This makes code easier to maintain and extend, since all common logic lives in one place, while differences are isolated in the subclasses. It also allows you to use polymorphism—treating different device types the same way when calling shared methods like `connect()` or `get_version()`.
 
@@ -273,13 +273,11 @@ for d in devices:
 
 **Challenge:** Create a hierarchy: NetworkDevice → Router → ISR4000Router
 
----
-
-## 📦 Creating Modules and Importing
+### Modules and Importing
 
 In Python, a module is simply a file that contains code—functions, classes, or variables—that you can reuse in other programs. To create one, you just save your code in a `.py` file, and to use it elsewhere, you import it with the `import` statement. For example, if you have a file named `network_tools.py` with a function called `ping_device()`, you can use it in another script by writing `import network_tools` and then calling `network_tools.ping_device()`. You can also import specific parts of a module with `from network_tools import ping_device`. Modules keep your code organized, easier to read, and reusable across multiple network automation scripts.
 
-### Import Your Own Functions and Classes
+#### Import Your Own Functions and Classes
 
 **📁 Practice Location:** `03-modules/module_practice.py`
 
@@ -296,7 +294,7 @@ cd 03-modules
 python module_practice.py
 ```
 
-### The `__init__.py` File
+#### The `__init__.py` File
 
 In Python, the `__init__.py` file defines how a directory behaves when it’s imported as a package. When you import a package, Python executes the code inside that `__init__.py` file exactly once, setting up the package namespace. This is where you can include variables, import other modules, and control what symbols become available when someone runs `from package import *`. In older versions of Python, its presence was required for Python to even recognize a directory as a package, but modern versions allow namespace packages without it. Still, `__init__.py` remains very useful: it lets you manage imports cleanly so users don’t need to know the internal file structure. For instance, you can import specific classes or functions from submodules and re-export them, simplifying the interface of your package. In short, `__init__.py` is the package’s entry point—it executes setup code on import, defines what’s public, and often serves as the “front door” through which everything else in the package becomes accessible.
 
@@ -308,11 +306,11 @@ In Python, the `__init__.py` file defines how a directory behaves when it’s im
 - Control what gets imported with `__all__`
 - Create convenient imports for package users
 
-### Importing Best Practices
+#### Importing Best Practices
 
 When importing in Python, keep it clean and predictable. Always place imports at the top of your file, right after any module docstring. Use absolute imports whenever possible, such as `from network_automation.devices import CiscoDevice`, so your code is clear and works across projects. Avoid wildcard imports like `from tools import *` because they clutter the namespace and make debugging harder. Group imports by standard library, third-party modules, and your own files, leaving a blank line between each group. Import only what you need—`from netmiko import ConnectHandler` is faster and easier to read than importing the whole library. Finally, avoid circular imports by placing shared constants or helper functions in a separate module if needed.
 
-### The Direct Execution Check
+#### The Direct Execution Check
 
 `if __name__ == "__main__"`: ensures that certain code only runs when the file is executed directly, not when it’s imported as a module. Python sets the special variable `__name__` to `"__main__"` for the main script, but to the module’s name when imported. This lets you keep reusable functions and classes separate from test or execution code.
 
@@ -332,13 +330,11 @@ if __name__ == "__main__":
 - Understand when to use each import method
 - Practice organizing imports in your scripts
 
----
-
-## 📂 Working with Files
+### Working with Files
 
 Working with files in Python involves opening, reading, writing, and closing files using the built-in `open()` function. You can read contents with methods like `read()` or `readlines()`, and write data with `write()` or `writelines()`. Always close files when finished, or better yet, use a `with` statement like `with open("devices.txt", "r") as f:` so Python handles closing automatically. This approach is common in network automation for reading device lists, saving logs, or exporting configuration data.
 
-### The OS Module
+#### The OS Module
 
 The `os` module gives you portable access to your operating system—handy for network automation scripts that need to read env vars, manage paths, or touch files and directories. Common moves: get or set environment values with `os.getenv("API_TOKEN")` and `os.environ["REGION"]="us-east"`, find the current directory using `os.getcwd()`, change directories with `os.chdir("/labs")`, list files via `os.listdir("inventory")`, create folders safely with `os.makedirs("outputs/logs", exist_ok=True)`, and join paths portably using `os.path.join("configs", "routers", "r1.txt")`. For running external commands prefer `subprocess`, but a quick call with `os.system("ping 10.0.0.1 -n 1")` can work in simple demos.
 
@@ -353,7 +349,7 @@ The `os` module gives you portable access to your operating system—handy for n
 
 **Try This:** Create a backup directory structure for different device types
 
-### The open() Function
+#### The open() Function
 
 `open()` returns a file handle so you can read or write data. Use a context manager so it auto-closes: `with open("devices.txt", "r") as f:`. Modes: `"r"` read, `"w"` write (truncate), `"a"` append, `"rb"`/`"wb"` binary. Read with `f.read()` or iterate lines; write with `f.write(text)`. Example:
 
@@ -376,7 +372,7 @@ with open("outputs/scan.txt", "w", encoding="utf-8") as f:
 - Understand different file modes
 - Practice proper file closing
 
-### The with open() Function
+#### The with open() Function
 
 `with open()` is the context-manager way to work with files so they close automatically—even if errors happen. Use it to read or write cleanly:
 
@@ -400,7 +396,7 @@ with open("outputs/results.txt", "w", encoding="utf-8") as f:
 
 **Challenge:** Read a device configuration template and replace placeholders with actual values
 
-### Create, Read, and Append
+#### Create, Read, and Append
 
 Use `with open()` to safely create, read, and append files. Create (or overwrite) with `"w"`, read with `"r"`, and append with `"a"`:
 
@@ -429,9 +425,7 @@ Use `"x"` to fail if the file already exists, and `"rb"`/`"wb"` for binary data.
 - Append log entries to monitoring files
 - Practice with different file modes
 
----
-
-## ⚠️ Error Handling with try...except
+### Error Handling with try...except
 
 Use `try...except` to handle errors without crashing, keeping the script moving when something fails.
 
@@ -473,13 +467,11 @@ python error_practice.py
 - File permission errors
 - Network unreachable errors
 
----
-
-## 📊 Working with Data Formats
+### Working with Data Formats
 
 Master the 4 essential data formats used in network automation! Each format has specific strengths for different network automation tasks.
 
-### Practice Structure
+#### Practice Structure
 
 Each format has its own focused directory with TODO-driven exercises:
 
@@ -507,7 +499,7 @@ Each format has its own focused directory with TODO-driven exercises:
 - `xml_practice.py` - TODO exercises for XML mastery
 - Learn: Enterprise systems, SOAP APIs, complex structures
 
-### Quick Start
+#### Quick Start
 
 ```bash
 cd 06-data-formats/json_examples
@@ -516,9 +508,7 @@ python json_practice.py
 
 Each practice script contains TODO exercises that build from basic reading to advanced manipulation. Complete the TODOs to make the code work and master each format!
 
----
-
-## 🎯 Putting It All Together
+### Putting It All Together
 
 **📁 Final Challenge:** `07-final-challenge/network_automation_project.py`
 
@@ -539,8 +529,6 @@ Create a complete network automation script that:
 - Code is organized into functions and classes
 - Configuration data is read from JSON/YAML files
 
----
-
 ## 📝 Notes for Success
 
 - **Practice Regularly:** Run each example and modify it to understand the concepts
@@ -551,8 +539,6 @@ Create a complete network automation script that:
 
 **Remember:** This is practice - make mistakes, break things, and learn from the experience!
 
----
-
 ## 🔗 Additional Resources
 
 - Practice data files are located in each format's directory (`06-data-formats/*/`)
@@ -561,4 +547,3 @@ Create a complete network automation script that:
 - Challenge solutions are in the `solutions/` directory (try the challenges first!)
 
 Good luck with your network automation journey! 🚀
-A Companion Repo for Module 1 Topics
