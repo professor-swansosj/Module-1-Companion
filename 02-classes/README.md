@@ -1,4 +1,4 @@
-# 🏗️ Classes & Objects - Network Device Modeling
+# 02: Classes & Objects - Network Device Modeling
 
 Welcome to the world of object-oriented programming! Here you'll learn to model network devices as Python classes - the foundation of professional network automation.
 
