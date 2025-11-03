@@ -1,4 +1,4 @@
-# ⚠️ Error Handling - Make Your Code Bulletproof
+# 05: Error Handling - Make Your Code Bulletproof
 
 Network automation breaks ALL THE TIME! Learn to handle errors gracefully so your scripts keep running when things go wrong.
 
