@@ -1,4 +1,4 @@
-# 📦 Modules & Imports - Code Reusability Made Simple
+# 03: Modules & Imports - Code Reusability Made Simple
 
 Ever copy the same code between scripts? Learn to create your own Python modules - the secret to professional network automation!
 
