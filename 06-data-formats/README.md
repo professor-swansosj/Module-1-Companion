@@ -1,6 +1,6 @@
-# 📊 Data Formats - Working with Network Information
+# 06: Data Formats - Working with Network Information
 
-Learn to read and write the 4 most common data formats in network automation. Each format has its strengths - master them all!
+Learn to read and write the four (4) most common data formats in network automation. Each format has its strengths - master them all!
 
 ## 🎯 What You'll Master
 
