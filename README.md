@@ -2,11 +2,11 @@
 
 ## Software Defined Networking Course
 
-> **Practice Makes Perfect!** This companion lab is your hands-on workshop for mastering Python fundamentals in network automation. Get ready to code, explore, and build the foundation for advanced SDN concepts!
+> **Practice Makes Perfect!** The purpose of the Companion Repo is to help you build a strong foundation of knowledge and skills so you can succeed in the graded lab. This companion is your hands-on workshop for mastering Python fundamentals in network automation. Get ready to code, explore, and build the foundation for advanced SDN concepts!
 
 ## 🎯 What You'll Practice
 
-Master Python fundamentals through network automation scenarios! You'll build functions that configure devices, create classes for network equipment, handle data files, and develop error-resistant automation scripts. Each module builds your coding confidence while preparing you for real-world SDN challenges.
+Master Python fundamentals through network automation scenarios! You'll build functions that configure devices, create classes for network equipment, handle data files, and develop error-resistant automation scripts. Each section builds your coding confidence while preparing you for real-world SDN challenges.
 
 ## 📋 Prerequisites
 
@@ -16,9 +16,9 @@ Master Python fundamentals through network automation scenarios! You'll build fu
 
 ## 🗂 Learning Path
 
-**Work through these modules progressively - each builds on the previous!**
+**Work through these sections progressively - each builds on the previous!**
 
-| Module | Focus | What You'll Build |
+| Section | Focus | What You'll Build |
 |--------|--------|-------------------|
 | **01-functions/** | Function Mastery | Network automation functions with various argument patterns |
 | **02-classes/** | Object-Oriented Design | Network device classes with inheritance and properties |
@@ -30,7 +30,7 @@ Master Python fundamentals through network automation scenarios! You'll build fu
 
 ## 🎯 Practice Callouts
 
-Throughout each module, look for these opportunities to get hands-on:
+Throughout each section, look for these opportunities to get hands-on:
 
 - 🔧 **TODO Comments**: Complete the missing code to make scripts work
 - 💡 **Hints**: Guidance to nudge you toward solutions without spoilers
@@ -59,14 +59,14 @@ The best way to learn programming is to **write code**! This companion is your p
 Ready to dive in? Here's your roadmap:
 
 1. **Start with 01-functions/** - Master function patterns for network automation
-2. **Progress through each module** - Each builds on the previous
+2. **Progress through each section** - Each builds on the previous
 3. **Complete the TODOs** - Make the code work by filling in missing pieces
 4. **Experiment freely** - Change code, break things, learn by doing!
 5. **Build confidence** - Each success prepares you for the next challenge
 
-## 🎖 Module Quick Reference
+## 🎖 Module 1 Companion Quick Reference
 
-### Functions
+### Section 01: Functions
 
 #### Positional Arguments
 
@@ -164,7 +164,9 @@ Add type hints to make your network automation code more professional and mainta
 
 **🎯 Your Mission:** Transform basic functions with proper type annotations for IP addresses, device lists, and configuration data
 
-### Classes and Objects
+---
+
+### Section 02: Classes and Objects
 
 Object-oriented programming helps organize complex network automation tasks. You'll create classes for network devices, configurations, and monitoring systems.
 
@@ -273,7 +275,9 @@ for d in devices:
 
 **Challenge:** Create a hierarchy: NetworkDevice → Router → ISR4000Router
 
-### Modules and Importing
+---
+
+### Section 03: Modules and Importing
 
 In Python, a module is simply a file that contains code—functions, classes, or variables—that you can reuse in other programs. To create one, you just save your code in a `.py` file, and to use it elsewhere, you import it with the `import` statement. For example, if you have a file named `network_tools.py` with a function called `ping_device()`, you can use it in another script by writing `import network_tools` and then calling `network_tools.ping_device()`. You can also import specific parts of a module with `from network_tools import ping_device`. Modules keep your code organized, easier to read, and reusable across multiple network automation scripts.
 
@@ -330,7 +334,9 @@ if __name__ == "__main__":
 - Understand when to use each import method
 - Practice organizing imports in your scripts
 
-### Working with Files
+---
+
+### Section 04: Working with Files
 
 Working with files in Python involves opening, reading, writing, and closing files using the built-in `open()` function. You can read contents with methods like `read()` or `readlines()`, and write data with `write()` or `writelines()`. Always close files when finished, or better yet, use a `with` statement like `with open("devices.txt", "r") as f:` so Python handles closing automatically. This approach is common in network automation for reading device lists, saving logs, or exporting configuration data.
 
@@ -425,7 +431,9 @@ Use `"x"` to fail if the file already exists, and `"rb"`/`"wb"` for binary data.
 - Append log entries to monitoring files
 - Practice with different file modes
 
-### Error Handling with try...except
+---
+
+### Section 05: Error Handling with try...except
 
 Use `try...except` to handle errors without crashing, keeping the script moving when something fails.
 
@@ -467,7 +475,9 @@ python error_practice.py
 - File permission errors
 - Network unreachable errors
 
-### Working with Data Formats
+---
+
+### Section 06: Working with Data Formats
 
 Master the 4 essential data formats used in network automation! Each format has specific strengths for different network automation tasks.
 
@@ -508,7 +518,9 @@ python json_practice.py
 
 Each practice script contains TODO exercises that build from basic reading to advanced manipulation. Complete the TODOs to make the code work and master each format!
 
-### Putting It All Together
+---
+
+### Section 07: Putting It All Together
 
 **📁 Final Challenge:** `07-final-challenge/network_automation_project.py`
 
