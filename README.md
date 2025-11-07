@@ -26,7 +26,6 @@ Master Python fundamentals through network automation scenarios! You'll build fu
 | **04-files/** | File Operations | Configuration file handlers and backup systems |
 | **05-error-handling/** | Robust Code | Error-resistant network automation with try/except |
 | **06-data-formats/** | Data Processing | Master JSON, CSV, YAML, and XML for network data |
-| **07-final-challenge/** | Integration Project | Complete network automation system using all concepts |
 
 ## 🎯 Practice Callouts
 
