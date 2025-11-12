@@ -519,27 +519,6 @@ Each practice script contains TODO exercises that build from basic reading to ad
 
 ---
 
-### Section 07: Putting It All Together
-
-**📁 Final Challenge:** `07-final-challenge/network_automation_project.py`
-
-Create a complete network automation script that:
-
-1. Uses classes to represent network devices
-2. Imports functions from custom modules
-3. Reads configuration data from multiple file formats
-4. Handles errors gracefully
-5. Logs operations to files
-6. Uses proper function annotations and documentation
-
-**Success Criteria:**
-
-- Script runs without errors
-- All file operations use context managers
-- Exceptions are properly handled
-- Code is organized into functions and classes
-- Configuration data is read from JSON/YAML files
-
 ## 📝 Notes for Success
 
 - **Practice Regularly:** Run each example and modify it to understand the concepts
